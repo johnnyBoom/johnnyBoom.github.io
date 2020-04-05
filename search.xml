@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>JAVA对象在内存中布局</title>
+    <url>/2020/04/05/JAVA%E5%AF%B9%E8%B1%A1%E5%9C%A8%E5%86%85%E5%AD%98%E4%B8%AD%E5%B8%83%E5%B1%80/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>CAS</title>
     <url>/2020/04/05/CAS/</url>
     <content><![CDATA[<h1 id="什么是CAS"><a href="#什么是CAS" class="headerlink" title="什么是CAS"></a>什么是CAS</h1><p>Compare and Swap 比较再交换<br>是一种乐观锁，java.util.concurrent.*并发包以CAS实现，而synchronized关键字保证同步，是独占锁，悲观锁<br>CAS在底层有汇编指令对应</p>
