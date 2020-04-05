@@ -49,7 +49,7 @@
 <h2 id="新建CNAME"><a href="#新建CNAME" class="headerlink" title="新建CNAME"></a>新建CNAME</h2><p>根目录新建CNAME johnnyb.club</p>
 <p>#结合typora插入图片</p>
 <p>文件-&gt;偏好设置-&gt;</p>
-<p><img src="../images/HEXO%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/typora1.png" alt="typora设置"></p>
+<p><img src="/images/HEXO%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/typora1.png" alt="typora设置"></p>
 <p>格式-&gt;图像-&gt;设置图片根目录,将<code>hexo/source</code>作为其根目录即可</p>
 ]]></content>
       <categories>
