@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>HEXO博客使用记录</title>
+    <url>/2020/04/05/HEXO%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<h1 id="新建博客"><a href="#新建博客" class="headerlink" title="新建博客"></a>新建博客</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo n &quot;新建博客&quot; &#x2F;&#x2F;new</span><br><span class="line">hexo clean</span><br><span class="line">hexo g &#x2F;&#x2F;generated</span><br><span class="line">hexo s &#x2F;&#x2F;server</span><br></pre></td></tr></table></figure>
+
+<h1 id="将博客托管到GitHub上"><a href="#将博客托管到GitHub上" class="headerlink" title="将博客托管到GitHub上"></a>将博客托管到GitHub上</h1><h2 id="安装git托管插件"><a href="#安装git托管插件" class="headerlink" title="安装git托管插件"></a>安装git托管插件</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cnpm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
+<h2 id="修改-hexo的-config-yml"><a href="#修改-hexo的-config-yml" class="headerlink" title="修改_hexo的_config.yml"></a>修改_hexo的_config.yml</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:johnnyBoom/johnnyBoom.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+<h1 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h1><h2 id="下载主题包"><a href="#下载主题包" class="headerlink" title="下载主题包"></a>下载主题包</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;litten&#x2F;hexo-theme-yilia.git themes&#x2F;yilia</span><br></pre></td></tr></table></figure>
+<h2 id="更改-config-yml"><a href="#更改-config-yml" class="headerlink" title="更改_config.yml"></a>更改_config.yml</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">yilia</span></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>HEXO 博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CAS</title>
+    <url>/2020/04/05/CAS/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>JAVA</category>
+      </categories>
+      <tags>
+        <tag>JAVA基础 锁</tag>
+      </tags>
+  </entry>
+</search>
