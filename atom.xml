@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>JohnnyB</title>
   
-  <subtitle>欢迎欢迎，热烈欢迎</subtitle>
+  <subtitle>欢迎!</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://johnnyb.club/"/>
