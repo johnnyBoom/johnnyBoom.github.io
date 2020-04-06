@@ -1,49 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>JAVA对象在内存中布局</title>
-    <url>/2020/04/05/JAVA%E5%AF%B9%E8%B1%A1%E5%9C%A8%E5%86%85%E5%AD%98%E4%B8%AD%E5%B8%83%E5%B1%80/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>CAS</title>
-    <url>/2020/04/05/CAS/</url>
-    <content><![CDATA[<h1 id="什么是CAS"><a href="#什么是CAS" class="headerlink" title="什么是CAS"></a>什么是CAS</h1><p>Compare and Swap 比较再交换<br>是一种乐观锁，java.util.concurrent.*并发包以CAS实现，而synchronized关键字保证同步，是独占锁，悲观锁<br>CAS在底层有汇编指令对应</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">lock cpmxchg</span><br></pre></td></tr></table></figure>
-<p>cpmxchg 本身不具备原子性<br>lock 指令当前CPU独占，其他CPU不能使用<br>代码示例</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> java.util.concurrent.atomic;</span><br><span class="line">...</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AtomicInteger</span> <span class="keyword">extends</span> <span class="title">Number</span> <span class="keyword">implements</span> <span class="title">java</span>.<span class="title">io</span>.<span class="title">Serializable</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">int</span> <span class="title">incrementAndGet</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> unsafe.getAndAddInt(<span class="keyword">this</span>, valueOffset, <span class="number">1</span>) + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> sun.misc;</span><br><span class="line">...</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">Unsafe</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">native</span> <span class="keyword">boolean</span> <span class="title">compareAndSwapInt</span><span class="params">(Object var1, <span class="keyword">long</span> var2, <span class="keyword">int</span> var4, <span class="keyword">int</span> var5)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">int</span> <span class="title">getAndAddInt</span><span class="params">(Object var1, <span class="keyword">long</span> var2, <span class="keyword">int</span> var4)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> var5;</span><br><span class="line">        <span class="keyword">do</span> &#123;</span><br><span class="line">            var5 = <span class="keyword">this</span>.getIntVolatile(var1, var2);</span><br><span class="line">        &#125; <span class="keyword">while</span>(!<span class="keyword">this</span>.compareAndSwapInt(var1, var2, var5, var5 + var4));</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> var5;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>#CAS算法</p>
-<p><img src="/images/CAS/cas.png" alt="cas算法"></p>
-]]></content>
-      <categories>
-        <category>JAVA</category>
-      </categories>
-      <tags>
-        <tag>JAVA基础 锁 CAS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>HEXO博客使用记录</title>
-    <url>/2020/04/05/HEXO%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<h1 id="新建博客"><a href="#新建博客" class="headerlink" title="新建博客"></a>新建博客</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo n &quot;新建博客&quot; &#x2F;&#x2F;new</span><br><span class="line">hexo clean</span><br><span class="line">hexo g &#x2F;&#x2F;generated</span><br><span class="line">hexo s &#x2F;&#x2F;server</span><br></pre></td></tr></table></figure>
-
-<h1 id="将博客托管到GitHub上"><a href="#将博客托管到GitHub上" class="headerlink" title="将博客托管到GitHub上"></a>将博客托管到GitHub上</h1><h2 id="安装git托管插件"><a href="#安装git托管插件" class="headerlink" title="安装git托管插件"></a>安装git托管插件</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cnpm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
-<h2 id="修改-hexo的-config-yml"><a href="#修改-hexo的-config-yml" class="headerlink" title="修改_hexo的_config.yml"></a>修改_hexo的_config.yml</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:johnnyBoom/johnnyBoom.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
-<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-
-<h1 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h1><h2 id="下载主题包"><a href="#下载主题包" class="headerlink" title="下载主题包"></a>下载主题包</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;litten&#x2F;hexo-theme-yilia.git themes&#x2F;yilia</span><br></pre></td></tr></table></figure>
-<h2 id="更改-config-yml"><a href="#更改-config-yml" class="headerlink" title="更改_config.yml"></a>更改_config.yml</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">yilia</span></span><br></pre></td></tr></table></figure>
-<h2 id="分类-标签默认页"><a href="#分类-标签默认页" class="headerlink" title="分类/标签默认页"></a>分类/标签默认页</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo new page categories</span><br><span class="line">hexo new page tags</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">type: categories</span><br><span class="line">layout: &quot;categories&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<h2 id="Search功能"><a href="#Search功能" class="headerlink" title="Search功能"></a>Search功能</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
-<p>修改hexo的_config.yml</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Hexo-generator-search</span></span><br><span class="line"><span class="attr">search:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">search.xml</span></span><br><span class="line">  <span class="attr">field:</span> <span class="string">post</span></span><br><span class="line">  <span class="attr">format:</span> <span class="string">html</span></span><br></pre></td></tr></table></figure>
+    <url>/2020/04/06/hexo-bo-ke-shi-yong-ji-lu/</url>
+    <content><![CDATA[<h1 id="新建博客"><a href="#新建博客" class="headerlink" title="新建博客"></a>新建博客</h1><pre><code>hexo n "新建博客" //new
+hexo clean
+hexo g //generated
+hexo s //server</code></pre><h1 id="将博客托管到GitHub上"><a href="#将博客托管到GitHub上" class="headerlink" title="将博客托管到GitHub上"></a>将博客托管到GitHub上</h1><h2 id="安装git托管插件"><a href="#安装git托管插件" class="headerlink" title="安装git托管插件"></a>安装git托管插件</h2><pre><code>cnpm install --save hexo-deployer-git</code></pre><h2 id="修改-hexo的-config-yml"><a href="#修改-hexo的-config-yml" class="headerlink" title="修改_hexo的_config.yml"></a>修改_hexo的_config.yml</h2><pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">deploy</span><span class="token punctuation">:</span>
+  <span class="token key atrule">type</span><span class="token punctuation">:</span> git
+  <span class="token key atrule">repo</span><span class="token punctuation">:</span> git@github.com<span class="token punctuation">:</span>johnnyBoom/johnnyBoom.github.io.git
+  <span class="token key atrule">branch</span><span class="token punctuation">:</span> master</code></pre>
+<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><pre><code>hexo d</code></pre><h1 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h1><h2 id="下载主题包"><a href="#下载主题包" class="headerlink" title="下载主题包"></a>下载主题包</h2><pre><code>git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia</code></pre><h2 id="更改-config-yml"><a href="#更改-config-yml" class="headerlink" title="更改_config.yml"></a>更改_config.yml</h2><pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">theme</span><span class="token punctuation">:</span> yilia</code></pre>
+<h2 id="分类-标签默认页"><a href="#分类-标签默认页" class="headerlink" title="分类/标签默认页"></a>分类/标签默认页</h2><pre><code>hexo new page categories
+hexo new page tags</code></pre><pre><code>---
+title: categories
+type: categories
+layout: "categories"
+---</code></pre><h2 id="Search功能"><a href="#Search功能" class="headerlink" title="Search功能"></a>Search功能</h2><pre><code>$ npm install hexo-generator-searchdb --save</code></pre><p>修改hexo的_config.yml</p>
+<pre class=" language-yaml"><code class="language-yaml"><span class="token comment" spellcheck="true"># Hexo-generator-search</span>
+<span class="token key atrule">search</span><span class="token punctuation">:</span>
+  <span class="token key atrule">path</span><span class="token punctuation">:</span> search.xml
+  <span class="token key atrule">field</span><span class="token punctuation">:</span> post
+  <span class="token key atrule">format</span><span class="token punctuation">:</span> html</code></pre>
 <p>##RSS</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">feed:m</span></span><br><span class="line">    <span class="attr">type:</span> <span class="string">atom</span></span><br><span class="line">    <span class="attr">path:</span> <span class="string">atom.xml</span></span><br><span class="line">    <span class="attr">limit:</span> <span class="number">20</span></span><br><span class="line">    <span class="attr">hub:</span></span><br><span class="line">    <span class="attr">content:</span></span><br><span class="line">    <span class="attr">content_limit:</span> <span class="number">140</span></span><br><span class="line">    <span class="attr">content_limit_delim:</span> <span class="string">' '</span></span><br><span class="line">    <span class="attr">order_by:</span> <span class="string">-date</span></span><br></pre></td></tr></table></figure>
+<pre><code>$ npm install hexo-generator-searchdb --save</code></pre><pre class=" language-yaml"><code class="language-yaml">feed<span class="token punctuation">:</span>m
+    <span class="token key atrule">type</span><span class="token punctuation">:</span> atom
+    <span class="token key atrule">path</span><span class="token punctuation">:</span> atom.xml
+    <span class="token key atrule">limit</span><span class="token punctuation">:</span> <span class="token number">20</span>
+    <span class="token key atrule">hub</span><span class="token punctuation">:</span>
+    <span class="token key atrule">content</span><span class="token punctuation">:</span>
+    <span class="token key atrule">content_limit</span><span class="token punctuation">:</span> <span class="token number">140</span>
+    <span class="token key atrule">content_limit_delim</span><span class="token punctuation">:</span> <span class="token string">' '</span>
+    <span class="token key atrule">order_by</span><span class="token punctuation">:</span> <span class="token punctuation">-</span>date</code></pre>
 <p>#配置域名</p>
 <h2 id="注册域名"><a href="#注册域名" class="headerlink" title="注册域名"></a>注册域名</h2><p>做域名映射<br>johnnyb.club johnnyBoom.github.io</p>
 <h2 id="新建CNAME"><a href="#新建CNAME" class="headerlink" title="新建CNAME"></a>新建CNAME</h2><p>根目录新建CNAME johnnyb.club</p>
@@ -51,12 +39,106 @@
 <p>文件-&gt;偏好设置-&gt;</p>
 <p><img src="/images/HEXO%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/typora1.png" alt="typora设置"></p>
 <p>格式-&gt;图像-&gt;设置图片根目录,将<code>hexo/source</code>作为其根目录即可</p>
-]]></content>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>]]></content>
       <categories>
         <category>前端</category>
       </categories>
       <tags>
         <tag>HEXO 博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JAVA对象在内存中布局</title>
+    <url>/2020/04/05/java-dui-xiang-zai-nei-cun-zhong-bu-ju/</url>
+    <content><![CDATA[<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>]]></content>
+  </entry>
+  <entry>
+    <title>CAS</title>
+    <url>/2020/04/05/cas/</url>
+    <content><![CDATA[<h1 id="什么是CAS"><a href="#什么是CAS" class="headerlink" title="什么是CAS"></a>什么是CAS</h1><p>Compare and Swap 比较再交换<br>是一种乐观锁，java.util.concurrent.*并发包以CAS实现，而synchronized关键字保证同步，是独占锁，悲观锁<br>CAS在底层有汇编指令对应</p>
+<pre><code>lock cpmxchg</code></pre><p>cpmxchg 本身不具备原子性<br>lock 指令当前CPU独占，其他CPU不能使用<br>代码示例</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>concurrent<span class="token punctuation">.</span>atomic<span class="token punctuation">;</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">AtomicInteger</span> <span class="token keyword">extends</span> <span class="token class-name">Number</span> <span class="token keyword">implements</span> <span class="token class-name">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>Serializable</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">final</span> <span class="token keyword">int</span> <span class="token function">incrementAndGet</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> unsafe<span class="token punctuation">.</span><span class="token function">getAndAddInt</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> valueOffset<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> sun<span class="token punctuation">.</span>misc<span class="token punctuation">;</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token keyword">public</span> <span class="token keyword">final</span> <span class="token keyword">class</span> <span class="token class-name">Unsafe</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">final</span> <span class="token keyword">native</span> <span class="token keyword">boolean</span> <span class="token function">compareAndSwapInt</span><span class="token punctuation">(</span>Object var1<span class="token punctuation">,</span> <span class="token keyword">long</span> var2<span class="token punctuation">,</span> <span class="token keyword">int</span> var4<span class="token punctuation">,</span> <span class="token keyword">int</span> var5<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">final</span> <span class="token keyword">int</span> <span class="token function">getAndAddInt</span><span class="token punctuation">(</span>Object var1<span class="token punctuation">,</span> <span class="token keyword">long</span> var2<span class="token punctuation">,</span> <span class="token keyword">int</span> var4<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> var5<span class="token punctuation">;</span>
+        <span class="token keyword">do</span> <span class="token punctuation">{</span>
+            var5 <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getIntVolatile</span><span class="token punctuation">(</span>var1<span class="token punctuation">,</span> var2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token operator">!</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">compareAndSwapInt</span><span class="token punctuation">(</span>var1<span class="token punctuation">,</span> var2<span class="token punctuation">,</span> var5<span class="token punctuation">,</span> var5 <span class="token operator">+</span> var4<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">return</span> var5<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>#CAS算法</p>
+<p><img src="/images/CAS/cas.png" alt="cas算法"></p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>]]></content>
+      <categories>
+        <category>JAVA</category>
+      </categories>
+      <tags>
+        <tag>JAVA基础 锁 CAS</tag>
       </tags>
   </entry>
 </search>
