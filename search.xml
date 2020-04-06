@@ -62,7 +62,8 @@ layout: "categories"
         <category>前端</category>
       </categories>
       <tags>
-        <tag>HEXO 博客</tag>
+        <tag>HEXO</tag>
+        <tag>博客</tag>
       </tags>
   </entry>
   <entry>
@@ -138,7 +139,9 @@ layout: "categories"
         <category>JAVA</category>
       </categories>
       <tags>
-        <tag>JAVA基础 锁 CAS</tag>
+        <tag>JAVA基础</tag>
+        <tag>锁</tag>
+        <tag>CAS</tag>
       </tags>
   </entry>
 </search>
