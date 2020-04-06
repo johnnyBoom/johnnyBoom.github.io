@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>JohnnyB</title>
   
-  
+  <subtitle>欢迎欢迎，热烈欢迎</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://johnnyb.club/"/>
@@ -52,7 +52,7 @@ hexo g
     <link href="http://johnnyb.club/2020/04/05/java-dui-xiang-zai-nei-cun-zhong-bu-ju/"/>
     <id>http://johnnyb.club/2020/04/05/java-dui-xiang-zai-nei-cun-zhong-bu-ju/</id>
     <published>2020-04-05T08:42:38.000Z</published>
-    <updated>2020-04-05T08:42:38.087Z</updated>
+    <updated>2020-04-06T03:50:26.597Z</updated>
     
     <summary type="html">
     
