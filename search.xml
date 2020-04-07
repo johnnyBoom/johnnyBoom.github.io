@@ -109,6 +109,12 @@ layout: "categories"
             document.body.appendChild(img);
           });
       </script>]]></content>
+      <categories>
+        <category>JAVA</category>
+      </categories>
+      <tags>
+        <tag>JAVA基础</tag>
+      </tags>
   </entry>
   <entry>
     <title>CAS</title>
