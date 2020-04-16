@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="JAVA对象在内存中布局, Java 前端 SpringBoot EBS Oracle Linux 财务">
+    <meta name="keywords" content="HEXO博客使用记录, Java 前端 SpringBoot EBS Oracle Linux 财务">
     <meta name="description" content="JohnnyB的个人博客,包括Java Vue SpringBoot EBS Oracle Linux 等">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>JAVA对象在内存中布局 | JohnnyB</title>
+    <title>HEXO博客使用记录 | JohnnyB</title>
     <link rel="icon" type="image/png" href="/ty.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -244,12 +244,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">JAVA对象在内存中布局</h1>
+                    <h1 class="description center-align post-title">HEXO博客使用记录</h1>
                 </div>
             </div>
         </div>
@@ -374,8 +374,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/JAVA%E5%9F%BA%E7%A1%80/">
-                                <span class="chip bg-color">JAVA基础</span>
+                            <a href="/tags/HEXO/">
+                                <span class="chip bg-color">HEXO</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%8D%9A%E5%AE%A2/">
+                                <span class="chip bg-color">博客</span>
                             </a>
                         
                     </div>
@@ -386,8 +390,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/JAVA/" class="post-category">
-                                JAVA
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                前端
                             </a>
                         
                     </div>
@@ -399,7 +403,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-04-05
+                    2020-04-06
                 </div>
                 
 
@@ -408,7 +412,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    52
+                    356
                 </div>
                 
 
@@ -431,7 +435,64 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <script>
+                <h1 id="新建博客"><a href="#新建博客" class="headerlink" title="新建博客"></a>新建博客</h1><pre><code>hexo n "新建博客" //new
+hexo clean
+hexo g //generated
+hexo s //server</code></pre><h1 id="将博客托管到GitHub上"><a href="#将博客托管到GitHub上" class="headerlink" title="将博客托管到GitHub上"></a>将博客托管到GitHub上</h1><h2 id="安装git托管插件"><a href="#安装git托管插件" class="headerlink" title="安装git托管插件"></a>安装git托管插件</h2><pre><code>cnpm install --save hexo-deployer-git</code></pre><h2 id="修改-hexo的-config-yml"><a href="#修改-hexo的-config-yml" class="headerlink" title="修改_hexo的_config.yml"></a>修改_hexo的_config.yml</h2><pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">deploy</span><span class="token punctuation">:</span>
+  <span class="token key atrule">type</span><span class="token punctuation">:</span> git
+  <span class="token key atrule">repo</span><span class="token punctuation">:</span> git@github.com<span class="token punctuation">:</span>johnnyBoom/johnnyBoom.github.io.git
+  <span class="token key atrule">branch</span><span class="token punctuation">:</span> master</code></pre>
+<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><pre><code>hexo d</code></pre><h1 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h1><h2 id="下载主题包"><a href="#下载主题包" class="headerlink" title="下载主题包"></a>下载主题包</h2><pre><code>git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia</code></pre><h2 id="更改-config-yml"><a href="#更改-config-yml" class="headerlink" title="更改_config.yml"></a>更改_config.yml</h2><pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">theme</span><span class="token punctuation">:</span> yilia</code></pre>
+<h2 id="分类-标签默认页"><a href="#分类-标签默认页" class="headerlink" title="分类/标签默认页"></a>分类/标签默认页</h2><pre><code>hexo new page categories
+hexo new page tags</code></pre><pre><code>---
+title: categories
+type: categories
+layout: "categories"
+---</code></pre><h2 id="Search功能"><a href="#Search功能" class="headerlink" title="Search功能"></a>Search功能</h2><pre><code>$ npm install hexo-generator-searchdb --save</code></pre><p>修改hexo的_config.yml</p>
+<pre class=" language-yaml"><code class="language-yaml"><span class="token comment" spellcheck="true"># Hexo-generator-search</span>
+<span class="token key atrule">search</span><span class="token punctuation">:</span>
+  <span class="token key atrule">path</span><span class="token punctuation">:</span> search.xml
+  <span class="token key atrule">field</span><span class="token punctuation">:</span> post</code></pre>
+<h2 id="RSS"><a href="#RSS" class="headerlink" title="RSS"></a>RSS</h2><pre><code>$ npm install hexo-generator-feed --save</code></pre><pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">feed</span><span class="token punctuation">:</span>
+  <span class="token key atrule">type</span><span class="token punctuation">:</span> atom
+  <span class="token key atrule">path</span><span class="token punctuation">:</span> atom.xml
+  <span class="token key atrule">limit</span><span class="token punctuation">:</span> <span class="token number">20</span>
+  <span class="token key atrule">hub</span><span class="token punctuation">:</span>
+  <span class="token key atrule">content</span><span class="token punctuation">:</span>
+  <span class="token key atrule">content_limit</span><span class="token punctuation">:</span> <span class="token number">140</span>
+  <span class="token key atrule">content_limit_delim</span><span class="token punctuation">:</span> <span class="token string">' '</span>
+  <span class="token key atrule">order_by</span><span class="token punctuation">:</span> <span class="token punctuation">-</span>date</code></pre>
+<h1 id="配置域名"><a href="#配置域名" class="headerlink" title="配置域名"></a>配置域名</h1><h2 id="注册域名"><a href="#注册域名" class="headerlink" title="注册域名"></a>注册域名</h2><p>做域名映射<br>johnnyb.club johnnyBoom.github.io</p>
+<h2 id="新建CNAME"><a href="#新建CNAME" class="headerlink" title="新建CNAME"></a>新建CNAME</h2><p>根目录新建CNAME johnnyb.club</p>
+<h1 id="结合typora插入图片"><a href="#结合typora插入图片" class="headerlink" title="结合typora插入图片"></a>结合typora插入图片</h1><p>文件-&gt;偏好设置-&gt;</p>
+<p><img src="/images/HEXO%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/typora1.png" alt="typora设置"></p>
+<p>格式-&gt;图像-&gt;设置图片根目录,将<code>hexo/source</code>作为其根目录即可</p>
+<h1 id="Code-highlight"><a href="#Code-highlight" class="headerlink" title="Code highlight"></a>Code highlight</h1><pre><code>npm i -S hexo-prism-plugin</code></pre><p>修改hexo的_config.yml</p>
+<pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">highlight</span><span class="token punctuation">:</span>
+  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+
+<span class="token key atrule">prism_plugin</span><span class="token punctuation">:</span>
+  <span class="token key atrule">mode</span><span class="token punctuation">:</span> <span class="token string">'preprocess'</span>    <span class="token comment" spellcheck="true"># realtime/preprocess</span>
+  <span class="token key atrule">theme</span><span class="token punctuation">:</span> <span class="token string">'tomorrow'</span>
+  <span class="token key atrule">line_number</span><span class="token punctuation">:</span> <span class="token boolean important">false    </span><span class="token comment" spellcheck="true"># default false</span>
+  custom_css<span class="token punctuation">:</span></code></pre>
+<h1 id="word-count"><a href="#word-count" class="headerlink" title="word count"></a>word count</h1><pre><code>npm i --save hexo-wordcount</code></pre><p>修改theme的config</p>
+<pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">postInfo</span><span class="token punctuation">:</span>
+  <span class="token key atrule">date</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">update</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+  <span class="token key atrule">wordCount</span><span class="token punctuation">:</span> <span class="token boolean important">false </span><span class="token comment" spellcheck="true"># set true.</span>
+  <span class="token key atrule">totalCount</span><span class="token punctuation">:</span> <span class="token boolean important">false </span><span class="token comment" spellcheck="true"># set true.</span>
+  <span class="token key atrule">min2read</span><span class="token punctuation">:</span> <span class="token boolean important">false </span><span class="token comment" spellcheck="true"># set true.</span>
+  <span class="token key atrule">readCount</span><span class="token punctuation">:</span> <span class="token boolean important">false </span><span class="token comment" spellcheck="true"># set true.</span></code></pre>
+<h1 id="添加墨迹表情"><a href="#添加墨迹表情" class="headerlink" title="添加墨迹表情"></a>添加墨迹表情</h1><pre><code>npm install hexo-filter-github-emojis --save</code></pre><p>修改hexo的_config.yml</p>
+<pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">githubEmojis</span><span class="token punctuation">:</span>
+  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">className</span><span class="token punctuation">:</span> github<span class="token punctuation">-</span>emoji
+  <span class="token key atrule">inject</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">styles</span><span class="token punctuation">:</span>
+  customEmojis<span class="token punctuation">:</span></code></pre>
+<p>markdown里使用 语法::, for example: <span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/1f604.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f604.png?v8">😄</span></p>
+<script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -474,7 +535,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://johnnyb.club/2020/04/05/java-dui-xiang-zai-nei-cun-zhong-bu-ju/">http://johnnyb.club/2020/04/05/java-dui-xiang-zai-nei-cun-zhong-bu-ju/</a>
+                    <a href="http://johnnyb.club/2020/04/06/HEXO%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/">http://johnnyb.club/2020/04/06/HEXO%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -512,8 +573,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/JAVA%E5%9F%BA%E7%A1%80/">
-                                    <span class="chip bg-color">JAVA基础</span>
+                                <a href="/tags/HEXO/">
+                                    <span class="chip bg-color">HEXO</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%8D%9A%E5%AE%A2/">
+                                    <span class="chip bg-color">博客</span>
                                 </a>
                             
                         </div>
@@ -679,9 +744,9 @@
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'http://johnnyb.club/2020/04/05/java-dui-xiang-zai-nei-cun-zhong-bu-ju/';
-        this.page.identifier = '/2020/04/05/java-dui-xiang-zai-nei-cun-zhong-bu-ju/';
-        this.page.title = 'JAVA对象在内存中布局';
+        this.page.url = 'http://johnnyb.club/2020/04/06/HEXO博客使用记录/';
+        this.page.identifier = '/2020/04/06/HEXO博客使用记录/';
+        this.page.title = 'HEXO博客使用记录';
     };
     let disqus_shortname = '';
 
@@ -951,12 +1016,12 @@
         appId: '6z2U7Ho7v0e7PDd8Tlgk7INN-MdYXbMMI',
         appKey: 'VfCD5mcVv32xeHqKz1wksvFI',
         notify: 'false' === 'true',
-        verify: 'true' === 'true',
+        verify: 'false' === 'true',
         visitor: 'true' === 'true',
         avatar: 'mm',
         pageSize: '10',
         lang: 'zh-cn',
-        placeholder: 'just go go'
+        placeholder: '说点什么吧'
     });
 </script>
 
@@ -973,63 +1038,7 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/04/06/hexo-bo-ke-shi-yong-ji-lu/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="HEXO博客使用记录">
-                        
-                        <span class="card-title">HEXO博客使用记录</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            新建博客hexo n "新建博客" //new
-hexo clean
-hexo g //generated
-hexo s //server将博客托管到GitHub上安装git托管插件cnpm install --save hexo-depl
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-06
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    前端
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/HEXO/">
-                        <span class="chip bg-color">HEXO</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%8D%9A%E5%AE%A2/">
-                        <span class="chip bg-color">博客</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/04/05/cas/">
+                <a href="/2020/04/16/CAS/">
                     <div class="card-image">
                         
                         
@@ -1046,9 +1055,9 @@ lock cpmxc
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-05
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-16
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1074,6 +1083,58 @@ lock cpmxc
                     
                     <a href="/tags/CAS/">
                         <span class="chip bg-color">CAS</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/04/05/JAVA%E5%AF%B9%E8%B1%A1%E5%9C%A8%E5%86%85%E5%AD%98%E4%B8%AD%E5%B8%83%E5%B1%80/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="JAVA对象在内存中布局">
+                        
+                        <span class="card-title">JAVA对象在内存中布局</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-05
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/JAVA/" class="post-category">
+                                    JAVA
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/JAVA%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">JAVA基础</span>
                     </a>
                     
                 </div>

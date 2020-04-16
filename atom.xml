@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://johnnyb.club/"/>
-  <updated>2020-04-07T04:55:35.050Z</updated>
+  <updated>2020-04-16T04:47:32.678Z</updated>
   <id>http://johnnyb.club/</id>
   
   <author>
@@ -17,9 +17,40 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>CAS</title>
+    <link href="http://johnnyb.club/2020/04/16/CAS/"/>
+    <id>http://johnnyb.club/2020/04/16/CAS/</id>
+    <published>2020-04-16T04:45:32.000Z</published>
+    <updated>2020-04-16T04:47:32.678Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;什么是CAS&quot;&gt;&lt;a href=&quot;#什么是CAS&quot; class=&quot;headerlink&quot; title=&quot;什么是CAS&quot;&gt;&lt;/a&gt;什么是CAS&lt;/h1&gt;&lt;p&gt;Compare and Swap
+        
+      
+    
+    </summary>
+    
+    
+      <category term="JAVA" scheme="http://johnnyb.club/categories/JAVA/"/>
+    
+    
+      <category term="JAVA基础" scheme="http://johnnyb.club/tags/JAVA%E5%9F%BA%E7%A1%80/"/>
+    
+      <category term="锁" scheme="http://johnnyb.club/tags/%E9%94%81/"/>
+    
+      <category term="CAS" scheme="http://johnnyb.club/tags/CAS/"/>
+    
+  </entry>
+  
+  <entry>
     <title>HEXO博客使用记录</title>
-    <link href="http://johnnyb.club/2020/04/06/hexo-bo-ke-shi-yong-ji-lu/"/>
-    <id>http://johnnyb.club/2020/04/06/hexo-bo-ke-shi-yong-ji-lu/</id>
+    <link href="http://johnnyb.club/2020/04/06/HEXO%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/"/>
+    <id>http://johnnyb.club/2020/04/06/HEXO%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</id>
     <published>2020-04-05T17:19:32.000Z</published>
     <updated>2020-04-07T04:55:35.050Z</updated>
     
@@ -49,8 +80,8 @@ hexo g
   
   <entry>
     <title>JAVA对象在内存中布局</title>
-    <link href="http://johnnyb.club/2020/04/05/java-dui-xiang-zai-nei-cun-zhong-bu-ju/"/>
-    <id>http://johnnyb.club/2020/04/05/java-dui-xiang-zai-nei-cun-zhong-bu-ju/</id>
+    <link href="http://johnnyb.club/2020/04/05/JAVA%E5%AF%B9%E8%B1%A1%E5%9C%A8%E5%86%85%E5%AD%98%E4%B8%AD%E5%B8%83%E5%B1%80/"/>
+    <id>http://johnnyb.club/2020/04/05/JAVA%E5%AF%B9%E8%B1%A1%E5%9C%A8%E5%86%85%E5%AD%98%E4%B8%AD%E5%B8%83%E5%B1%80/</id>
     <published>2020-04-05T08:42:38.000Z</published>
     <updated>2020-04-07T04:55:50.156Z</updated>
     
@@ -75,37 +106,6 @@ hexo g
     
     
       <category term="JAVA基础" scheme="http://johnnyb.club/tags/JAVA%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CAS</title>
-    <link href="http://johnnyb.club/2020/04/05/cas/"/>
-    <id>http://johnnyb.club/2020/04/05/cas/</id>
-    <published>2020-04-05T02:59:21.000Z</published>
-    <updated>2020-04-07T04:54:51.343Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;什么是CAS&quot;&gt;&lt;a href=&quot;#什么是CAS&quot; class=&quot;headerlink&quot; title=&quot;什么是CAS&quot;&gt;&lt;/a&gt;什么是CAS&lt;/h1&gt;&lt;p&gt;Compare and Swap
-        
-      
-    
-    </summary>
-    
-    
-      <category term="JAVA" scheme="http://johnnyb.club/categories/JAVA/"/>
-    
-    
-      <category term="JAVA基础" scheme="http://johnnyb.club/tags/JAVA%E5%9F%BA%E7%A1%80/"/>
-    
-      <category term="锁" scheme="http://johnnyb.club/tags/%E9%94%81/"/>
-    
-      <category term="CAS" scheme="http://johnnyb.club/tags/CAS/"/>
     
   </entry>
   

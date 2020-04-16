@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="CAS, Java 前端 SpringBoot EBS Oracle Linux 财务">
+    <meta name="keywords" content="JAVA对象在内存中布局, Java 前端 SpringBoot EBS Oracle Linux 财务">
     <meta name="description" content="JohnnyB的个人博客,包括Java Vue SpringBoot EBS Oracle Linux 等">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>CAS | JohnnyB</title>
+    <title>JAVA对象在内存中布局 | JohnnyB</title>
     <link rel="icon" type="image/png" href="/ty.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -244,12 +244,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">CAS</h1>
+                    <h1 class="description center-align post-title">JAVA对象在内存中布局</h1>
                 </div>
             </div>
         </div>
@@ -378,14 +378,6 @@
                                 <span class="chip bg-color">JAVA基础</span>
                             </a>
                         
-                            <a href="/tags/%E9%94%81/">
-                                <span class="chip bg-color">锁</span>
-                            </a>
-                        
-                            <a href="/tags/CAS/">
-                                <span class="chip bg-color">CAS</span>
-                            </a>
-                        
                     </div>
                     
                 </div>
@@ -416,7 +408,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    211
+                    52
                 </div>
                 
 
@@ -439,31 +431,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="什么是CAS"><a href="#什么是CAS" class="headerlink" title="什么是CAS"></a>什么是CAS</h1><p>Compare and Swap 比较再交换<br>是一种乐观锁，java.util.concurrent.*并发包以CAS实现，而synchronized关键字保证同步，是独占锁，悲观锁<br>CAS在底层有汇编指令对应</p>
-<pre><code>lock cpmxchg</code></pre><p>cpmxchg 本身不具备原子性<br>lock 指令当前CPU独占，其他CPU不能使用<br>代码示例</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>concurrent<span class="token punctuation">.</span>atomic<span class="token punctuation">;</span>
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">AtomicInteger</span> <span class="token keyword">extends</span> <span class="token class-name">Number</span> <span class="token keyword">implements</span> <span class="token class-name">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>Serializable</span> <span class="token punctuation">{</span>
-    <span class="token keyword">public</span> <span class="token keyword">final</span> <span class="token keyword">int</span> <span class="token function">incrementAndGet</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> unsafe<span class="token punctuation">.</span><span class="token function">getAndAddInt</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> valueOffset<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> sun<span class="token punctuation">.</span>misc<span class="token punctuation">;</span>
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-<span class="token keyword">public</span> <span class="token keyword">final</span> <span class="token keyword">class</span> <span class="token class-name">Unsafe</span> <span class="token punctuation">{</span>
-    <span class="token keyword">public</span> <span class="token keyword">final</span> <span class="token keyword">native</span> <span class="token keyword">boolean</span> <span class="token function">compareAndSwapInt</span><span class="token punctuation">(</span>Object var1<span class="token punctuation">,</span> <span class="token keyword">long</span> var2<span class="token punctuation">,</span> <span class="token keyword">int</span> var4<span class="token punctuation">,</span> <span class="token keyword">int</span> var5<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">public</span> <span class="token keyword">final</span> <span class="token keyword">int</span> <span class="token function">getAndAddInt</span><span class="token punctuation">(</span>Object var1<span class="token punctuation">,</span> <span class="token keyword">long</span> var2<span class="token punctuation">,</span> <span class="token keyword">int</span> var4<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">int</span> var5<span class="token punctuation">;</span>
-        <span class="token keyword">do</span> <span class="token punctuation">{</span>
-            var5 <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getIntVolatile</span><span class="token punctuation">(</span>var1<span class="token punctuation">,</span> var2<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span> <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token operator">!</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">compareAndSwapInt</span><span class="token punctuation">(</span>var1<span class="token punctuation">,</span> var2<span class="token punctuation">,</span> var5<span class="token punctuation">,</span> var5 <span class="token operator">+</span> var4<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        <span class="token keyword">return</span> var5<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-<p>#CAS算法</p>
-<p><img src="/images/CAS/cas.png" alt="cas算法"></p>
-<script>
+                <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -506,7 +474,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://johnnyb.club/2020/04/05/cas/">http://johnnyb.club/2020/04/05/cas/</a>
+                    <a href="http://johnnyb.club/2020/04/05/JAVA%E5%AF%B9%E8%B1%A1%E5%9C%A8%E5%86%85%E5%AD%98%E4%B8%AD%E5%B8%83%E5%B1%80/">http://johnnyb.club/2020/04/05/JAVA%E5%AF%B9%E8%B1%A1%E5%9C%A8%E5%86%85%E5%AD%98%E4%B8%AD%E5%B8%83%E5%B1%80/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -546,14 +514,6 @@
                             
                                 <a href="/tags/JAVA%E5%9F%BA%E7%A1%80/">
                                     <span class="chip bg-color">JAVA基础</span>
-                                </a>
-                            
-                                <a href="/tags/%E9%94%81/">
-                                    <span class="chip bg-color">锁</span>
-                                </a>
-                            
-                                <a href="/tags/CAS/">
-                                    <span class="chip bg-color">CAS</span>
                                 </a>
                             
                         </div>
@@ -719,9 +679,9 @@
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'http://johnnyb.club/2020/04/05/cas/';
-        this.page.identifier = '/2020/04/05/cas/';
-        this.page.title = 'CAS';
+        this.page.url = 'http://johnnyb.club/2020/04/05/JAVA对象在内存中布局/';
+        this.page.identifier = '/2020/04/05/JAVA对象在内存中布局/';
+        this.page.title = 'JAVA对象在内存中布局';
     };
     let disqus_shortname = '';
 
@@ -991,12 +951,12 @@
         appId: '6z2U7Ho7v0e7PDd8Tlgk7INN-MdYXbMMI',
         appKey: 'VfCD5mcVv32xeHqKz1wksvFI',
         notify: 'false' === 'true',
-        verify: 'true' === 'true',
+        verify: 'false' === 'true',
         visitor: 'true' === 'true',
         avatar: 'mm',
         pageSize: '10',
         lang: 'zh-cn',
-        placeholder: 'just go go'
+        placeholder: '说点什么吧'
     });
 </script>
 
@@ -1013,7 +973,63 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/04/05/java-dui-xiang-zai-nei-cun-zhong-bu-ju/">
+                <a href="/2020/04/06/HEXO%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="HEXO博客使用记录">
+                        
+                        <span class="card-title">HEXO博客使用记录</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            新建博客hexo n "新建博客" //new
+hexo clean
+hexo g //generated
+hexo s //server将博客托管到GitHub上安装git托管插件cnpm install --save hexo-depl
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-06
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/HEXO/">
+                        <span class="chip bg-color">HEXO</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%8D%9A%E5%AE%A2/">
+                        <span class="chip bg-color">博客</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/04/05/JAVA%E5%AF%B9%E8%B1%A1%E5%9C%A8%E5%86%85%E5%AD%98%E4%B8%AD%E5%B8%83%E5%B1%80/">
                     <div class="card-image">
                         
                         
@@ -1029,56 +1045,6 @@
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-05
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/JAVA/" class="post-category">
-                                    JAVA
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/JAVA%E5%9F%BA%E7%A1%80/">
-                        <span class="chip bg-color">JAVA基础</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/04/05/cas/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="CAS">
-                        
-                        <span class="card-title">CAS</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            什么是CASCompare and Swap 比较再交换是一种乐观锁，java.util.concurrent.*并发包以CAS实现，而synchronized关键字保证同步，是独占锁，悲观锁CAS在底层有汇编指令对应
-lock cpmxc
                         
                     </div>
                     <div class="publish-info">
@@ -1103,14 +1069,6 @@ lock cpmxc
                     
                     <a href="/tags/JAVA%E5%9F%BA%E7%A1%80/">
                         <span class="chip bg-color">JAVA基础</span>
-                    </a>
-                    
-                    <a href="/tags/%E9%94%81/">
-                        <span class="chip bg-color">锁</span>
-                    </a>
-                    
-                    <a href="/tags/CAS/">
-                        <span class="chip bg-color">CAS</span>
                     </a>
                     
                 </div>
