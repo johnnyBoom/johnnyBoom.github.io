@@ -25,8 +25,7 @@
         <span class="token keyword">return</span> var5<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
-<p>#CAS算法</p>
-<p><img src="../images/CAS/cas-1587012444327.png" alt=""></p>
+<h1 id="CAS算法"><a href="#CAS算法" class="headerlink" title="CAS算法"></a>CAS算法</h1><p><img src="/images/CAS/cas-1587012444327.png" alt=""></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
