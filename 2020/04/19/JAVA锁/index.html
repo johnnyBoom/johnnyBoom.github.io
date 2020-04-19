@@ -29,8 +29,8 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
     
-<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><link rel="alternate" href="/atom.xml" title="JohnnyB" type="application/atom+xml">
-</head>
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="JohnnyB" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -412,7 +412,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    337
+                    372
                 </div>
                 
 
@@ -443,7 +443,13 @@
 <p>概念：用户态，内核态。</p>
 <p>轻量级锁时用户态的一个循环，执行效率高，循环会不断消耗CPU，申请重量级锁时要向内核申请。重量级锁锁定时，其他线程处于等待状态，不消耗CPU。</p>
 <h1 id="锁降级"><a href="#锁降级" class="headerlink" title="锁降级"></a>锁降级</h1><p>锁降级发生在GC,只被VMThread访问，降级没有意义，简单认为降级不存在</p>
-<h1 id="锁消除"><a href="#锁消除" class="headerlink" title="锁消除"></a>锁消除</h1><h1 id="锁粗化"><a href="#锁粗化" class="headerlink" title="锁粗化"></a>锁粗化</h1><h1 id=""><a href="#" class="headerlink" title=""></a></h1><script>
+<h1 id="锁消除"><a href="#锁消除" class="headerlink" title="锁消除"></a>锁消除</h1><h1 id="锁粗化"><a href="#锁粗化" class="headerlink" title="锁粗化"></a>锁粗化</h1><h1 id="synchonized-实现过程"><a href="#synchonized-实现过程" class="headerlink" title="synchonized 实现过程"></a>synchonized 实现过程</h1><ol>
+<li>JAVA代码层级：synchronized</li>
+<li>字节码层级：monitorenter monitorexit</li>
+<li>JVM执行层级：自动锁升级</li>
+<li>CPU汇编层级：lock comxchg</li>
+</ol>
+<h1 id=""><a href="#" class="headerlink" title=""></a></h1><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -986,7 +992,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">1.1k</span>&nbsp;字
+                class="white-color">1.2k</span>&nbsp;字
             
             
             
