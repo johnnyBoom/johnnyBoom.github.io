@@ -485,9 +485,8 @@
                         <div class="summary block-with-text">
                             
                                 锁升级过程new -&gt; 偏向锁 -&gt; 轻量级锁 (无锁、自旋锁、自适应自旋) -&gt; 重量级锁
-
-        document.querySelectorAll('.github-emoji')
-          .f
+偏向锁偏向于第一个刚刚进来的线程(贴标签，张三的锁，当前线程的指针)，不用申请操作系统层面的大锁
+轻量级锁（自旋锁）当偏向锁发生
                             
                         </div>
                         <div class="publish-info">
@@ -514,6 +513,10 @@
                             <span class="chip bg-color">JAVA基础</span>
                         </a>
                         
+                        <a href="/tags/%E9%94%81/">
+                            <span class="chip bg-color">锁</span>
+                        </a>
+                        
                     </div>
                     
                 </div>
@@ -524,8 +527,7 @@
                     <a href="/2020/04/16/CAS/">
                         <div class="card-image">
                             
-                            
-                            <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="CAS">
+                            <img src="/images/CAS/cas-1587012444327.png" class="responsive-img" alt="CAS">
                             
                             <span class="card-title">CAS</span>
                         </div>
@@ -580,8 +582,7 @@ lock cpmxc
                     <a href="/2020/04/06/HEXO%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/">
                         <div class="card-image">
                             
-                            
-                            <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="HEXO博客使用记录">
+                            <img src="/images/HEXO博客使用记录/typora1.png" class="responsive-img" alt="HEXO博客使用记录">
                             
                             <span class="card-title">HEXO博客使用记录</span>
                         </div>
@@ -634,8 +635,7 @@ hexo s //server将博客托管到GitHub上安装git托管插件cnpm install --sa
                     <a href="/2020/04/05/JAVA%E5%AF%B9%E8%B1%A1%E5%9C%A8%E5%86%85%E5%AD%98%E4%B8%AD%E5%B8%83%E5%B1%80/">
                         <div class="card-image">
                             
-                            
-                            <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="JAVA对象在内存中布局">
+                            <img src="/images/JAVA对象在内存中布局/ObjectLayout1.jpg" class="responsive-img" alt="JAVA对象在内存中布局">
                             
                             <span class="card-title">JAVA对象在内存中布局</span>
                         </div>
@@ -698,7 +698,7 @@ hexo s //server将博客托管到GitHub上安装git托管插件cnpm install --sa
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">891</span>&nbsp;字
+                class="white-color">1.1k</span>&nbsp;字
             
             
             

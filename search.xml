@@ -4,7 +4,14 @@
     <title>JAVA锁</title>
     <url>/2020/04/19/JAVA%E9%94%81/</url>
     <content><![CDATA[<h1 id="锁升级过程"><a href="#锁升级过程" class="headerlink" title="锁升级过程"></a>锁升级过程</h1><p>new -&gt; 偏向锁 -&gt; 轻量级锁 (无锁、自旋锁、自适应自旋) -&gt; 重量级锁</p>
-<script>
+<h2 id="偏向锁"><a href="#偏向锁" class="headerlink" title="偏向锁"></a>偏向锁</h2><p>偏向于第一个刚刚进来的线程(贴标签，张三的锁，当前线程的指针)，不用申请操作系统层面的大锁</p>
+<h2 id="轻量级锁（自旋锁）"><a href="#轻量级锁（自旋锁）" class="headerlink" title="轻量级锁（自旋锁）"></a>轻量级锁（自旋锁）</h2><p>当偏向锁发生任意竞争的时候，偏向锁会升级为轻量级锁。首先撤销偏向锁，CAS操作，修改指向线程栈(竞争者)中Lock Record（竞争着的标签）的指针</p>
+<h2 id="重量级锁"><a href="#重量级锁" class="headerlink" title="重量级锁"></a>重量级锁</h2><p>JDK1.6之前，当自旋次数超过10次，或者等待线程超过CPU核数1/2。</p>
+<p>JDK1.6之后，加入自适应自旋，JVM自己控制。</p>
+<p>概念：用户态，内核态。</p>
+<p>轻量级锁时用户态的一个循环，执行效率高，循环会不断消耗CPU，申请重量级锁时要向内核申请。重量级锁锁定时，其他线程处于等待状态，不消耗CPU。</p>
+<h1 id="锁降级"><a href="#锁降级" class="headerlink" title="锁降级"></a>锁降级</h1><p>锁降级发生在GC,只被VMThread访问，降级没有意义，简单认为降级不存在</p>
+<h1 id="锁消除"><a href="#锁消除" class="headerlink" title="锁消除"></a>锁消除</h1><h1 id="锁粗化"><a href="#锁粗化" class="headerlink" title="锁粗化"></a>锁粗化</h1><h1 id=""><a href="#" class="headerlink" title=""></a></h1><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -28,6 +35,7 @@
       </categories>
       <tags>
         <tag>JAVA基础</tag>
+        <tag>锁</tag>
       </tags>
   </entry>
   <entry>
