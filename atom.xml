@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://johnnyb.club/"/>
-  <updated>2020-04-19T00:15:29.081Z</updated>
+  <updated>2020-04-19T01:18:22.773Z</updated>
   <id>http://johnnyb.club/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JAVA锁</title>
+    <link href="http://johnnyb.club/2020/04/19/JAVA%E9%94%81/"/>
+    <id>http://johnnyb.club/2020/04/19/JAVA%E9%94%81/</id>
+    <published>2020-04-19T01:14:31.000Z</published>
+    <updated>2020-04-19T01:18:22.773Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;锁升级过程&quot;&gt;&lt;a href=&quot;#锁升级过程&quot; class=&quot;headerlink&quot; title=&quot;锁升级过程&quot;&gt;&lt;/a&gt;锁升级过程&lt;/h1&gt;&lt;p&gt;new -&amp;gt; 偏向锁 -&amp;gt; 轻量级锁 (无锁、自旋锁、自适应自旋) -&amp;gt;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="JAVA" scheme="http://johnnyb.club/categories/JAVA/"/>
+    
+    
+      <category term="JAVA基础" scheme="http://johnnyb.club/tags/JAVA%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
   
   <entry>
     <title>CAS</title>
@@ -83,7 +110,7 @@ hexo g
     <link href="http://johnnyb.club/2020/04/05/JAVA%E5%AF%B9%E8%B1%A1%E5%9C%A8%E5%86%85%E5%AD%98%E4%B8%AD%E5%B8%83%E5%B1%80/"/>
     <id>http://johnnyb.club/2020/04/05/JAVA%E5%AF%B9%E8%B1%A1%E5%9C%A8%E5%86%85%E5%AD%98%E4%B8%AD%E5%B8%83%E5%B1%80/</id>
     <published>2020-04-05T08:42:38.000Z</published>
-    <updated>2020-04-19T01:11:06.731Z</updated>
+    <updated>2020-04-19T01:22:41.329Z</updated>
     
     <summary type="html">
     
