@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="JAVA锁, Java 前端 SpringBoot EBS Oracle Linux 财务">
+    <meta name="keywords" content="volatile, Java 前端 SpringBoot EBS Oracle Linux 财务">
     <meta name="description" content="JohnnyB的个人博客,包括Java Vue SpringBoot EBS Oracle Linux 等">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>JAVA锁 | JohnnyB</title>
+    <title>volatile | JohnnyB</title>
     <link rel="icon" type="image/png" href="/ty.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -244,12 +244,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">JAVA锁</h1>
+                    <h1 class="description center-align post-title">volatile</h1>
                 </div>
             </div>
         </div>
@@ -378,8 +378,8 @@
                                 <span class="chip bg-color">JAVA基础</span>
                             </a>
                         
-                            <a href="/tags/%E9%94%81/">
-                                <span class="chip bg-color">锁</span>
+                            <a href="/tags/volatile/">
+                                <span class="chip bg-color">volatile</span>
                             </a>
                         
                     </div>
@@ -412,14 +412,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    372
+                    543
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -435,21 +435,36 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="锁升级过程"><a href="#锁升级过程" class="headerlink" title="锁升级过程"></a>锁升级过程</h1><p>new -&gt; 偏向锁 -&gt; 轻量级锁 (无锁、自旋锁、自适应自旋) -&gt; 重量级锁</p>
-<h2 id="偏向锁"><a href="#偏向锁" class="headerlink" title="偏向锁"></a>偏向锁</h2><p>偏向于第一个刚刚进来的线程(贴标签，张三的锁，当前线程的指针)，不用申请操作系统层面的大锁</p>
-<h2 id="轻量级锁（自旋锁）"><a href="#轻量级锁（自旋锁）" class="headerlink" title="轻量级锁（自旋锁）"></a>轻量级锁（自旋锁）</h2><p>当偏向锁发生任意竞争的时候，偏向锁会升级为轻量级锁。首先撤销偏向锁，CAS操作，修改指向线程栈(竞争者)中Lock Record（竞争着的标签）的指针</p>
-<h2 id="重量级锁"><a href="#重量级锁" class="headerlink" title="重量级锁"></a>重量级锁</h2><p>JDK1.6之前，当自旋次数超过10次，或者等待线程超过CPU核数1/2。</p>
-<p>JDK1.6之后，加入自适应自旋，JVM自己控制。</p>
-<p>概念：用户态，内核态。</p>
-<p>轻量级锁时用户态的一个循环，执行效率高，循环会不断消耗CPU，申请重量级锁时要向内核申请。重量级锁锁定时，其他线程处于等待状态，不消耗CPU。</p>
-<h1 id="锁降级"><a href="#锁降级" class="headerlink" title="锁降级"></a>锁降级</h1><p>锁降级发生在GC,只被VMThread访问，降级没有意义，简单认为降级不存在</p>
-<h1 id="锁消除"><a href="#锁消除" class="headerlink" title="锁消除"></a>锁消除</h1><h1 id="锁粗化"><a href="#锁粗化" class="headerlink" title="锁粗化"></a>锁粗化</h1><h1 id="synchonized-实现过程"><a href="#synchonized-实现过程" class="headerlink" title="synchonized 实现过程"></a>synchonized 实现过程</h1><ol>
-<li>JAVA代码层级：synchronized</li>
-<li>字节码层级：monitorenter monitorexit</li>
-<li>JVM执行层级：自动锁升级</li>
-<li>CPU汇编层级：lock comxchg</li>
+                <h1 id="volatile概念"><a href="#volatile概念" class="headerlink" title="volatile概念"></a>volatile概念</h1><ol>
+<li><p>保证线程(CPU)可见性</p>
+</li>
+<li><p>禁止指令重排序</p>
+<p>eg.DCL单例（Double Check Lock）模式需要volatile关键字修饰</p>
+<p>new 在字节码层级有下面三条指令</p>
+<p>0 new #2 <t></t></p>
+<p>4 invokespecial #3 &lt;T.<init>&gt;</init></p>
+<p>7 astore_1</p>
+<p>如果4 7 指令重排序new是半初始化状态的对象</p>
+</li>
 </ol>
-<h1 id=""><a href="#" class="headerlink" title=""></a></h1><script>
+<h2 id="Volatile如何解决指令重排序"><a href="#Volatile如何解决指令重排序" class="headerlink" title="Volatile如何解决指令重排序"></a>Volatile如何解决指令重排序</h2><p>1.源码层：volatile i</p>
+<p>2.字节码层:Access flags:volatile,只加volatile修饰</p>
+<p>3.JVM层：内存屏障，LoadLoad,StoreStore,LoadStore,StoreLoad，屏障两边的指令不可以重排序</p>
+<p>4.hotspot实现：底层C指令lock</p>
+<h1 id="其他概念"><a href="#其他概念" class="headerlink" title="其他概念"></a>其他概念</h1><h2 id="MESI"><a href="#MESI" class="headerlink" title="MESI"></a>MESI</h2><p>CPU高速缓存一致性协议</p>
+<p>CPU中内置了少量的高速缓存以解决I\O速度和CPU运算速度之间的不匹配问题。</p>
+<p>在CPU访问存储设备时，无论是存取数据抑或存取指令，都趋于聚集在一片连续的区域中，这就被称为局部性原理。</p>
+<p><strong>时间局部性（Temporal Locality）</strong>：如果一个信息项正在被访问，那么在近期它很可能还会被再次访问，比如循环、递归、方法的反复调用等。</p>
+<p><strong>空间局部性（Spatial Locality）</strong>：如果一个存储器的位置被引用，那么将来他附近的位置也会被引用，比如顺序执行的代码、连续创建的两个对象、数组等。</p>
+<h3 id="带有高速缓存的CPU执行计算的流程"><a href="#带有高速缓存的CPU执行计算的流程" class="headerlink" title="带有高速缓存的CPU执行计算的流程"></a>带有高速缓存的CPU执行计算的流程</h3><ol>
+<li>程序以及数据被加载到主内存</li>
+<li>指令和数据被加载到CPU的高速缓存</li>
+<li>CPU执行指令，把结果写到高速缓存</li>
+<li>高速缓存中的数据写回主内存</li>
+</ol>
+<p>由于CPU的运算速度超越了1级缓存的数据I\O能力，CPU厂商又引入了多级的缓存结构。</p>
+<p>多核CPU的情况下有多个一级缓存，如何保证缓存内部数据的一致,不让系统数据混乱。这里就引出了一个一致性的协议MESI。</p>
+<script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -492,7 +507,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://johnnyb.club/2020/04/19/JAVA%E9%94%81/">http://johnnyb.club/2020/04/19/JAVA%E9%94%81/</a>
+                    <a href="http://johnnyb.club/2020/04/19/volatile/">http://johnnyb.club/2020/04/19/volatile/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -534,8 +549,8 @@
                                     <span class="chip bg-color">JAVA基础</span>
                                 </a>
                             
-                                <a href="/tags/%E9%94%81/">
-                                    <span class="chip bg-color">锁</span>
+                                <a href="/tags/volatile/">
+                                    <span class="chip bg-color">volatile</span>
                                 </a>
                             
                         </div>
@@ -703,9 +718,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2020/04/19/volatile/">
                     <div class="card-image">
@@ -730,9 +746,9 @@ new 在字节码层级有下面三条指令
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-19
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-19
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -745,6 +761,7 @@ new 在字节码层级有下面三条指令
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -767,24 +784,26 @@ new 在字节码层级有下面三条指令
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/04/16/CAS/">
+                <a href="/2020/04/19/JAVA%E9%94%81/">
                     <div class="card-image">
                         
-                        <img src="/images/CAS/cas-1587012444327.png" class="responsive-img" alt="CAS">
                         
-                        <span class="card-title">CAS</span>
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="JAVA锁">
+                        
+                        <span class="card-title">JAVA锁</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            什么是CASCompare and Swap 比较再交换是一种乐观锁，java.util.concurrent.*并发包以CAS实现，而synchronized关键字保证同步，是独占锁，悲观锁CAS在底层有汇编指令对应
-lock cpmxc
+                            锁升级过程new -&gt; 偏向锁 -&gt; 轻量级锁 (无锁、自旋锁、自适应自旋) -&gt; 重量级锁
+偏向锁偏向于第一个刚刚进来的线程(贴标签，张三的锁，当前线程的指针)，不用申请操作系统层面的大锁
+轻量级锁（自旋锁）当偏向锁发生
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-16
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-19
                             </span>
                         <span class="publish-author">
                             
@@ -807,10 +826,6 @@ lock cpmxc
                     
                     <a href="/tags/%E9%94%81/">
                         <span class="chip bg-color">锁</span>
-                    </a>
-                    
-                    <a href="/tags/CAS/">
-                        <span class="chip bg-color">CAS</span>
                     </a>
                     
                 </div>

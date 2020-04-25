@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://johnnyb.club/"/>
-  <updated>2020-04-19T02:30:37.640Z</updated>
+  <updated>2020-04-25T14:56:41.353Z</updated>
   <id>http://johnnyb.club/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>volatile</title>
+    <link href="http://johnnyb.club/2020/04/19/volatile/"/>
+    <id>http://johnnyb.club/2020/04/19/volatile/</id>
+    <published>2020-04-19T02:35:25.000Z</published>
+    <updated>2020-04-25T14:56:41.353Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;volatile概念&quot;&gt;&lt;a href=&quot;#volatile概念&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="JAVA" scheme="http://johnnyb.club/categories/JAVA/"/>
+    
+    
+      <category term="JAVA基础" scheme="http://johnnyb.club/tags/JAVA%E5%9F%BA%E7%A1%80/"/>
+    
+      <category term="volatile" scheme="http://johnnyb.club/tags/volatile/"/>
+    
+  </entry>
   
   <entry>
     <title>JAVA锁</title>
