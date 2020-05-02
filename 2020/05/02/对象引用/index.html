@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="ThreadLocal, Java 前端 SpringBoot EBS Oracle Linux 财务">
+    <meta name="keywords" content="对象引用, Java 前端 SpringBoot EBS Oracle Linux 财务">
     <meta name="description" content="张海达的个人博客,包括Java Vue SpringBoot EBS Oracle Linux 等">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>ThreadLocal | 张海达的个人博客</title>
+    <title>对象引用 | 张海达的个人博客</title>
     <link rel="icon" type="image/png" href="/ty.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -244,12 +244,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/images/ThreadLocal/threadlocal5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/images/%E5%AF%B9%E8%B1%A1%E5%BC%95%E7%94%A8/referenceObject.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">ThreadLocal</h1>
+                    <h1 class="description center-align post-title">对象引用</h1>
                 </div>
             </div>
         </div>
@@ -378,16 +378,12 @@
                                 <span class="chip bg-color">JAVA基础</span>
                             </a>
                         
-                            <a href="/tags/ThreadLocal/">
-                                <span class="chip bg-color">ThreadLocal</span>
-                            </a>
-                        
-                            <a href="/tags/ThreadLocalMap/">
-                                <span class="chip bg-color">ThreadLocalMap</span>
-                            </a>
-                        
                             <a href="/tags/%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B/">
                                 <span class="chip bg-color">引用类型</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%AF%B9%E8%B1%A1%E5%BC%95%E7%94%A8/">
+                                <span class="chip bg-color">对象引用</span>
                             </a>
                         
                     </div>
@@ -411,7 +407,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-04-25
+                    2020-05-02
                 </div>
                 
 
@@ -420,7 +416,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    166
+                    58
                 </div>
                 
 
@@ -443,12 +439,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><p>本地线程副本变量工具类，本地变量，线程专享，互不影响<br>每个线程有个ThreadLocalMap，由 Entry&lt;key,value&gt;构成， key弱引用指向—–&gt;Threadlocal ，value-&gt;Object。</p>
-<p>线程内new threadlocal，set保存变量到threadlocalmap，get从threadlocalmap取出变量，每个线程有自己的theradlocalmap,set时，将threadlocal作为entry的key保存，将变量作为value保存，key指向的threadlocal为弱引用，用完后务必remove，避免内存溢出。</p>
-<p><img src="/images/ThreadLocal/threadlocal2.png" alt=""></p>
-<p><img src="/images/ThreadLocal/threadlocacl3.jpg" alt=""></p>
-<p><img src="/images/ThreadLocal/threadlocal4.png" alt=""></p>
-<p><img src="/images/ThreadLocal/threadlocal5.jpg" alt=""></p>
+                <h1 id="对象引用类型"><a href="#对象引用类型" class="headerlink" title="对象引用类型"></a>对象引用类型</h1><p><img src="/images/%E5%AF%B9%E8%B1%A1%E5%BC%95%E7%94%A8/referenceObject.jpg" alt=""></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -492,7 +483,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://johnnyb.club/2020/04/25/ThreadLocal/">http://johnnyb.club/2020/04/25/ThreadLocal/</a>
+                    <a href="http://johnnyb.club/2020/05/02/%E5%AF%B9%E8%B1%A1%E5%BC%95%E7%94%A8/">http://johnnyb.club/2020/05/02/%E5%AF%B9%E8%B1%A1%E5%BC%95%E7%94%A8/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -534,16 +525,12 @@
                                     <span class="chip bg-color">JAVA基础</span>
                                 </a>
                             
-                                <a href="/tags/ThreadLocal/">
-                                    <span class="chip bg-color">ThreadLocal</span>
-                                </a>
-                            
-                                <a href="/tags/ThreadLocalMap/">
-                                    <span class="chip bg-color">ThreadLocalMap</span>
-                                </a>
-                            
                                 <a href="/tags/%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B/">
                                     <span class="chip bg-color">引用类型</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%AF%B9%E8%B1%A1%E5%BC%95%E7%94%A8/">
+                                    <span class="chip bg-color">对象引用</span>
                                 </a>
                             
                         </div>
@@ -711,9 +698,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2020/05/02/%E5%AF%B9%E8%B1%A1%E5%BC%95%E7%94%A8/">
                     <div class="card-image">
@@ -734,9 +722,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-02
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-02
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -749,6 +737,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -775,31 +764,23 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/04/19/volatile/">
+                <a href="/2020/04/25/ThreadLocal/">
                     <div class="card-image">
                         
+                        <img src="/images/ThreadLocal/threadlocal5.jpg" class="responsive-img" alt="ThreadLocal">
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="volatile">
-                        
-                        <span class="card-title">volatile</span>
+                        <span class="card-title">ThreadLocal</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            volatile概念
-保证线程(CPU)可见性
-
-禁止指令重排序
-eg.DCL单例（Double Check Lock）模式需要volatile关键字修饰
-new 在字节码层级有下面三条指令
-0 new #2 
-4 invokespecia
+                            概念本地线程副本变量工具类，本地变量，线程专享，互不影响每个线程有个ThreadLocalMap，由 Entry&lt;key,value&gt;构成， key弱引用指向—–&gt;Threadlocal ，value-&gt;Object
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-19
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-25
                             </span>
                         <span class="publish-author">
                             
@@ -820,8 +801,16 @@ new 在字节码层级有下面三条指令
                         <span class="chip bg-color">JAVA基础</span>
                     </a>
                     
-                    <a href="/tags/volatile/">
-                        <span class="chip bg-color">volatile</span>
+                    <a href="/tags/ThreadLocal/">
+                        <span class="chip bg-color">ThreadLocal</span>
+                    </a>
+                    
+                    <a href="/tags/ThreadLocalMap/">
+                        <span class="chip bg-color">ThreadLocalMap</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B/">
+                        <span class="chip bg-color">引用类型</span>
                     </a>
                     
                 </div>

@@ -1,6 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>对象引用</title>
+    <url>/2020/05/02/%E5%AF%B9%E8%B1%A1%E5%BC%95%E7%94%A8/</url>
+    <content><![CDATA[<h1 id="对象引用类型"><a href="#对象引用类型" class="headerlink" title="对象引用类型"></a>对象引用类型</h1><p><img src="/images/%E5%AF%B9%E8%B1%A1%E5%BC%95%E7%94%A8/referenceObject.jpg" alt=""></p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>]]></content>
+      <categories>
+        <category>JAVA</category>
+      </categories>
+      <tags>
+        <tag>JAVA基础</tag>
+        <tag>引用类型</tag>
+        <tag>对象引用</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ThreadLocal</title>
     <url>/2020/04/25/ThreadLocal/</url>
     <content><![CDATA[<h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><p>本地线程副本变量工具类，本地变量，线程专享，互不影响<br>每个线程有个ThreadLocalMap，由 Entry&lt;key,value&gt;构成， key弱引用指向—–&gt;Threadlocal ，value-&gt;Object。</p>
