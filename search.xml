@@ -1,6 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>ThreadLocal</title>
+    <url>/2020/04/25/ThreadLocal/</url>
+    <content><![CDATA[<h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><p>本地线程副本变量工具类，本地变量，线程专享，互不影响<br>每个线程有个ThreadLocalMap，由 Entry&lt;key,value&gt;构成， key弱引用指向—–&gt;Threadlocal ，value-&gt;Object。</p>
+<p>线程内new threadlocal，set保存变量到threadlocalmap，get从threadlocalmap取出变量，每个线程有自己的theradlocalmap,set时，将threadlocal作为entry的key保存，将变量作为value保存，key指向的threadlocal为弱引用，用完后务必remove，避免内存溢出。</p>
+<p><img src="/images/ThreadLocal/threadlocal2.png" alt=""></p>
+<p><img src="/images/ThreadLocal/threadlocacl3.jpg" alt=""></p>
+<p><img src="/images/ThreadLocal/threadlocal4.png" alt=""></p>
+<p><img src="/images/ThreadLocal/threadlocal5.jpg" alt=""></p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>]]></content>
+      <categories>
+        <category>JAVA</category>
+      </categories>
+      <tags>
+        <tag>JAVA基础</tag>
+        <tag>ThreadLocal</tag>
+        <tag>ThreadLocalMap</tag>
+        <tag>引用类型</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>volatile</title>
     <url>/2020/04/19/volatile/</url>
     <content><![CDATA[<h1 id="volatile概念"><a href="#volatile概念" class="headerlink" title="volatile概念"></a>volatile概念</h1><ol>

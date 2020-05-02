@@ -1,20 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>JohnnyB</title>
+  <title>张海达的个人博客</title>
   
   <subtitle>欢迎!</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://johnnyb.club/"/>
-  <updated>2020-04-25T14:56:41.353Z</updated>
+  <updated>2020-05-02T01:46:52.226Z</updated>
   <id>http://johnnyb.club/</id>
   
   <author>
-    <name>JohnnyB</name>
+    <name>张海达</name>
     
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ThreadLocal</title>
+    <link href="http://johnnyb.club/2020/04/25/ThreadLocal/"/>
+    <id>http://johnnyb.club/2020/04/25/ThreadLocal/</id>
+    <published>2020-04-25T14:58:44.000Z</published>
+    <updated>2020-05-02T01:46:52.226Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot; title=&quot;概念&quot;&gt;&lt;/a&gt;概念&lt;/h1&gt;&lt;p&gt;本地线程副本变量工具类，本地变量，线程专享，互不影响&lt;br&gt;每个线程有个ThreadLocalMap，由
+        
+      
+    
+    </summary>
+    
+    
+      <category term="JAVA" scheme="http://johnnyb.club/categories/JAVA/"/>
+    
+    
+      <category term="JAVA基础" scheme="http://johnnyb.club/tags/JAVA%E5%9F%BA%E7%A1%80/"/>
+    
+      <category term="ThreadLocal" scheme="http://johnnyb.club/tags/ThreadLocal/"/>
+    
+      <category term="ThreadLocalMap" scheme="http://johnnyb.club/tags/ThreadLocalMap/"/>
+    
+      <category term="引用类型" scheme="http://johnnyb.club/tags/%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>volatile</title>
