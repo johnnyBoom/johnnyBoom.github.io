@@ -244,7 +244,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/images/ThreadLocal/threadlocal5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/images/springboot%E7%BB%9F%E4%B8%80%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/1588607392113.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -416,7 +416,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    216
+                    302
                 </div>
                 
 
@@ -471,6 +471,14 @@
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
 <p><img src="/images/springboot%E7%BB%9F%E4%B8%80%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/1588608442588.png" alt="1588608442588"></p>
+<h1 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h1><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Target</span><span class="token punctuation">(</span>ElementType<span class="token punctuation">.</span>TYPE<span class="token punctuation">)</span>
+<span class="token annotation punctuation">@Retention</span><span class="token punctuation">(</span>RetentionPolicy<span class="token punctuation">.</span>RUNTIME<span class="token punctuation">)</span>
+<span class="token annotation punctuation">@Documented</span>
+<span class="token annotation punctuation">@Component</span>
+<span class="token keyword">public</span> @<span class="token keyword">interface</span> <span class="token class-name">ControllerAdvice</span></code></pre>
+<p>@ControllerAdvice是一个特殊的@Component注解，作用于类方法中使用了@ExceptionHandler、@InitBinder、@ModelAttirbute的类，生效在@Controller类上。</p>
+<p>容器中所有标注了@ControllerAdvice的bean,基于有序语义或@Order、@Priority进行排序的。</p>
+<p>@RestControllerAdvice,是@ControlleAdvice和@ResponseBody的合并简写，@ExceptionHandller默认带有@ResponseBody语义。</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -737,7 +745,7 @@
                 <a href="/2020/05/04/springboot%E7%BB%9F%E4%B8%80%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/">
                     <div class="card-image">
                         
-                        <img src="/images/ThreadLocal/threadlocal5.jpg" class="responsive-img" alt="springboot统一异常处理">
+                        <img src="/images/springboot%E7%BB%9F%E4%B8%80%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/1588607392113.png" class="responsive-img" alt="springboot统一异常处理">
                         
                         <span class="card-title">springboot统一异常处理</span>
                     </div>
@@ -1024,7 +1032,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">2.2k</span>&nbsp;字
+                class="white-color">2.3k</span>&nbsp;字
             
             
             
